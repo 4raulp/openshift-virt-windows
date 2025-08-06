@@ -1,6 +1,6 @@
 ---
 - name: "installing windows vm on openshift virtualization"
-  hosts: ""
+  hosts: "localhost"
   vars_files:
     - vars.yml
   tasks:
