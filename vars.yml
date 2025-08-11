@@ -13,4 +13,4 @@ namespace: "default"
 data_source_name: "win11"
 storage: 21474836480
 storageClassName: "ocs-external-storagecluster-ceph-rbd"
-configmap: "sysprep-config-blush-carp-89"
+configmap: "sysprep-config-aquamarine-cattle-45"
