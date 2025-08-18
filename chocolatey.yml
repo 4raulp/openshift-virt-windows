@@ -1,5 +1,5 @@
 - name: Setup Windows VM and build app
-  hosts: windows_vm
+  hosts: default-win11-test-saif
   gather_facts: no
   vars:
     project_dir: "C:\\Users\\Administrator\\source\\repos\\SampleApp"
