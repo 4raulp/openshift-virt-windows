@@ -1,0 +1,16 @@
+- name: Setup Windows VM and build app
+  hosts: windows_vm
+  gather_facts: no
+  vars:
+    project_dir: "C:\\Users\\Administrator\\source\\repos\\SampleApp"
+    project_file: "SampleApp.csproj"
+    msbuild_path: "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools\\MSBuild\\Current\\Bin\\MSBuild.exe"
+  tasks:
+    - name: Ensure Chocolatey is installed
+      win_chocolatey:
+        name: chocolatey
+        state: present
+    - name: Ensure Visual Studio Build Tools are installed
+      win_chocolatey:
+        name: visualstudio2019buildtools
+        state: present
