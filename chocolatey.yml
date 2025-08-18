@@ -5,12 +5,26 @@
     project_dir: "C:\\Users\\Administrator\\source\\repos\\SampleApp"
     project_file: "SampleApp.csproj"
     msbuild_path: "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools\\MSBuild\\Current\\Bin\\MSBuild.exe"
+    choco_packages:
+      - name: nodejs
+        version: 13.0.0
+      - name: python
+        version: 3.6.0
   tasks:
-    - name: Ensure Chocolatey is installed
-      win_chocolatey:
-        name: chocolatey
-        state: present
-    - name: Ensure Visual Studio Build Tools are installed
-      win_chocolatey:
-        name: visualstudio2019buildtools
-        state: present
+  - name: Install specific versions of packages sequentially
+    chocolatey.chocolatey.win_chocolatey:
+      name: "{{ item.name }}"
+      version: "{{ item.version }}"
+      force: yes
+    loop: "{{ choco_packages }}"
+
+  - name: Check python version
+    ansible.windows.win_command: python --version
+    register: check_python_version
+
+  - name: Check nodejs version
+    ansible.windows.win_command: node --version
+    register: check_node_version
+
+  - ansible.builtin.debug:
+      msg: Python Version is {{ check_python_version.stdout_lines[0] }} and NodeJS version is {{ check_node_version.stdout_lines[0] }}
