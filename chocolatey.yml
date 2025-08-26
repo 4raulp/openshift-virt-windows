@@ -47,5 +47,5 @@
 
     # - debug:
     #     msg: "Installed .NET version is {{ dotnet_version.stdout }}"
-  - ansible.builtin.debug:
-      msg: Python Version is {{ check_python_version.stdout_lines[0] }} and NodeJS version is {{ check_node_version.stdout_lines[0] }}
+    - ansible.builtin.debug:
+        msg: Python Version is {{ check_python_version.stdout_lines[0] }} and NodeJS version is {{ check_node_version.stdout_lines[0] }}
