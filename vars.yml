@@ -13,4 +13,4 @@ namespace: "default"
 data_source_name: "win11"
 storage: 21474836480
 storageClassName: "ocs-external-storagecluster-ceph-rbd"
-configmap: "sysprep-config-maroon-mosquito-30"
+configmap: "sysprep-config-gray-minnow-54"
