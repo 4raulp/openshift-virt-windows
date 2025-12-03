@@ -13,4 +13,4 @@ namespace: "default"
 data_source_name: "win11"
 storage: 21474836480
 storageClassName: "ocs-external-storagecluster-ceph-rbd"
-configmap: "sysprep-win11-moccasin-cod-65-qvlv77"
+configmap: "sysprep-win11-coral-haddock-69-3bteyj"
